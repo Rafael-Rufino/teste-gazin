@@ -1,4 +1,5 @@
 export interface IProps {
-  onClick: () => void;
-  children: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
 }
