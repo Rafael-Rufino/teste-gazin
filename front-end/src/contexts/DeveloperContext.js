@@ -50,6 +50,9 @@ export function AuthContextProvider({ children }) {
     if (hobby) {
       setHobby("");
     }
+    if (gender) {
+      setGender("");
+    }
 
     setOpenFormModal(false);
   }
