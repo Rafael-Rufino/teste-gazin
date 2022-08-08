@@ -18,7 +18,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   max-width: 400px;
-  max-height: 620px;
+  max-height: 600px;
   padding: 32px 48px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -59,7 +59,7 @@ export const FormMain = styled.main`
   margin: auto 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 `;
 
 export const Footer = styled.footer`
