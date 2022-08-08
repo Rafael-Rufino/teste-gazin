@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const VideoListWrapper = styled.ul`
+export const Wrapper = styled.ul`
   display: flex;
   justify-content: center;
   justify-self: center;
