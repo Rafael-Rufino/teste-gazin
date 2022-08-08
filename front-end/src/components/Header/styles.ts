@@ -10,13 +10,11 @@ export const Container = styled.header`
   align-items: center;
   background: ${theme.colors.background};
   border-bottom: 1px solid ${theme.colors.secondary};
-  font-size: 1rem;
-  font-weight: bold;
-
-  h2 {
-    color: ${theme.colors.heading};
-    span {
-      color: ${theme.colors.secondary};
-    }
+`;
+export const Title = styled.h1`
+  color: ${theme.colors.heading};
+  font-size: 1.5rem;
+  span {
+    color: ${theme.colors.secondary};
   }
 `;

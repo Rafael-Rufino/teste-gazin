@@ -1,17 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/DeveloperContext";
 import { Button } from "../Button";
-
-import { Container } from "./styles";
+import { IoAddOutline } from "react-icons/io5";
+import { Container, Title } from "./styles";
 
 export default function Header() {
   const { handleAdd } = useContext(AuthContext);
   return (
     <Container>
-      <h2>
+      <Title>
         Developer <span>Registration</span>
-      </h2>
-      <Button onClick={handleAdd}>Adicionar Desenvolvedor</Button>
+      </Title>
+      <Button onClick={handleAdd}>
+        <IoAddOutline size={22} />
+        Adicionar Desenvolvedor
+      </Button>
     </Container>
   );
 }
