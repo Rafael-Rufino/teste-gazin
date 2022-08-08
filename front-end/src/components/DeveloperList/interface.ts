@@ -4,6 +4,6 @@ export type IDeveloper = {
   name: string;
   gender: string;
   age: string;
-  birthDate: string;
+  birthDate: Date;
   hobby: string;
 };
