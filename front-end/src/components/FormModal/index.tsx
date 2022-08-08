@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/DeveloperContext";
-
 import { Button } from "../Button";
 
 import {
@@ -16,26 +13,16 @@ import {
 } from "./styles";
 
 export default function FormModal() {
-  const {
-    handleClose,
-    name,
-    gender,
-    birthDate,
-    age,
-    hobby,
-    level,
-    handleSubmit,
-  } = useContext(AuthContext);
   return (
     <Overlay>
       <Container>
         <Header>
           <strong>Adicionar desenvolvedor</strong>
-          <Button onClick={handleClose} type="button">
+          <Button onClick={() => {}} type="button">
             <CloseIcon />
           </Button>
         </Header>
-        <FormContainer onSubmit={handleSubmit}>
+        <FormContainer onSubmit={() => {}}>
           <FormMain>
             <InputGroup>
               <label htmlFor="level">Nivel</label>
@@ -43,7 +30,7 @@ export default function FormModal() {
                 id="level"
                 type="text"
                 placeholder="Digite seu Nivel"
-                value={}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
@@ -54,7 +41,7 @@ export default function FormModal() {
                 id="name"
                 type="text"
                 placeholder="Digite seu Nome"
-                value={}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
@@ -65,7 +52,7 @@ export default function FormModal() {
                 id="gender"
                 type="text"
                 placeholder="Digite seu gênero"
-                value={gender}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
@@ -76,7 +63,7 @@ export default function FormModal() {
                 id="birthDate"
                 type="date"
                 placeholder="Digite sua Data Nascimento"
-                value={}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
@@ -87,7 +74,7 @@ export default function FormModal() {
                 id="age"
                 type="text"
                 placeholder="Digite sua Idade"
-                value={}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
@@ -98,7 +85,7 @@ export default function FormModal() {
                 id="hobby"
                 type="text"
                 placeholder="Digite seu Hobby"
-                value={}
+                value={""}
                 onChange={() => {}}
               />
             </InputGroup>
