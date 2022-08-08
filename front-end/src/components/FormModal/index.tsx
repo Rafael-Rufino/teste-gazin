@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/DeveloperContext";
 import { Button } from "../Button";
+import { Input } from "../Input";
 
 import {
   Overlay,
   Header,
   Container,
   FormContainer,
-  InputGroup,
   FormMain,
   Footer,
   CloseIcon,
@@ -42,71 +42,56 @@ export default function FormModal() {
         </Header>
         <FormContainer onSubmit={handleSubmit}>
           <FormMain>
-            <InputGroup>
-              <label htmlFor="level">Nivel</label>
-              <input
-                id="level"
-                type="text"
-                placeholder="Digite seu Nivel"
-                value={level}
-                onChange={handleLevel}
-              />
-            </InputGroup>
+            <Input
+              label="Nivel"
+              id="level"
+              type="text"
+              value={level}
+              placeholder="Digite seu Nivel"
+              onChange={handleLevel}
+            />
+            <Input
+              label="Nome"
+              id="name"
+              type="text"
+              placeholder="Digite seu Nome"
+              value={name}
+              onChange={handleName}
+            />
+            <Input
+              label="Sexo"
+              id="gender"
+              type="text"
+              placeholder="Digite seu gênero"
+              value={gender}
+              onChange={handleGender}
+            />
+            <Input
+              label="Data Nascimento"
+              id="birthDate"
+              type="date"
+              placeholder="Digite sua Data Nascimento"
+              value={birthDate}
+              onChange={handleBrthDate}
+            />
 
-            <InputGroup>
-              <label htmlFor="name">Nome</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Digite seu Nome"
-                value={name}
-                onChange={handleName}
-              />
-            </InputGroup>
+            <Input
+              label="Idade"
+              id="age"
+              type="text"
+              placeholder="Digite sua Idade"
+              value={age}
+              onChange={handleAge}
+            />
 
-            <InputGroup>
-              <label htmlFor="gender">Sexo</label>
-              <input
-                id="gender"
-                type="text"
-                placeholder="Digite seu gênero"
-                value={gender}
-                onChange={handleGender}
-              />
-            </InputGroup>
-
-            <InputGroup>
-              <label htmlFor="birthDate">Data Nascimento</label>
-              <input
-                id="birthDate"
-                type="date"
-                placeholder="Digite sua Data Nascimento"
-                value={birthDate}
-                onChange={handleBrthDate}
-              />
-            </InputGroup>
-
-            <InputGroup>
-              <label htmlFor="age">Idade</label>
-              <input
-                id="age"
-                type="text"
-                placeholder="Digite sua Idade"
-                value={age}
-                onChange={handleAge}
-              />
-            </InputGroup>
-
-            <InputGroup>
-              <label htmlFor="hobby">Hobby</label>
-              <input
-                id="hobby"
-                type="text"
-                placeholder="Digite seu Hobby"
-                value={hobby}
-                onChange={handleHobby}
-              />
-            </InputGroup>
+            <Input
+              label="Hobby"
+              id="hobby"
+              type="text"
+              placeholder="Digite seu Hobby"
+              value={hobby}
+              onChange={handleHobby}
+            />
           </FormMain>
           <Footer>
             <Button type="submit">

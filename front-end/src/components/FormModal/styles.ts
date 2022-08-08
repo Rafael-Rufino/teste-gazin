@@ -18,7 +18,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   max-width: 400px;
-  max-height: 600px;
+  max-height: 620px;
   padding: 32px 48px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -61,27 +61,7 @@ export const FormMain = styled.main`
   flex-direction: column;
   gap: 12px;
 `;
-export const InputGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 
-  label {
-    font-size: 1rem;
-    color: ${theme.colors.text};
-  }
-
-  input {
-    border: none;
-    color: ${theme.colors.black};
-    background-color: ${theme.colors.input};
-    border: 1px solid ${theme.colors.secondary};
-    border-radius: 4px;
-    height: 40px;
-    width: 100%;
-    padding-left: 10px;
-  }
-`;
 export const Footer = styled.footer`
   display: flex;
   justify-content: center;
