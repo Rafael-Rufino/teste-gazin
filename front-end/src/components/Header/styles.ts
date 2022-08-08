@@ -3,9 +3,9 @@ import theme from "../../styles/themes";
 
 export const Container = styled.header`
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 80px;
-  padding: 30px 20px;
+  padding: 30px 40px;
   justify-content: space-between;
   align-items: center;
   background: ${theme.colors.background};
