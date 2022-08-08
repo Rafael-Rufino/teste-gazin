@@ -3,16 +3,7 @@ import { Container, Wrapper } from "./styles";
 import { Developer } from "../Developer";
 
 import { useAxios } from "../../hooks/useAxios";
-
-type IDeveloper = {
-  _id: string;
-  level: string;
-  name: string;
-  gender: string;
-  age: string;
-  birthDate: string;
-  hobby: string;
-};
+import { IDeveloper } from "./interface";
 
 export function DeveloperList() {
   const { data } = useAxios("developers");
