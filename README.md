@@ -21,8 +21,7 @@ O <strong>Developer</strong> é um projeto teste da Gazin, utilizado para valida
 
 ## Proposta
 
-O projeto consiste em criar um sistema de cadastro de Desenvolvedores, que deverá obrigatóriamente, estar
-associado a um determinado nível.
+O projeto consiste em criar um sistema de cadastro de Desenvolvedores.
 
 [ ] - O candidato deverá criar  1 CRUD completos: 
 
