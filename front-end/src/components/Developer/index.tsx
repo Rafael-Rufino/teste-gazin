@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/DeveloperContext";
 import { Props } from "./interface";
 import { Button } from "../Button";
 import theme from "../../styles/themes";
+import { format } from "date-fns";
 
 export function Developer({
   id,
@@ -19,11 +20,13 @@ export function Developer({
 }: Props) {
   const { handleEdit, handleDelete } = useContext(AuthContext);
 
+  const birthDateFormatted = format(new Date(birthDate), "dd/MM/yyyy");
+
   return (
     <Container>
       <td>{name}</td>
       <td>{gender}</td>
-      <td>{new Intl.DateTimeFormat("pt-BR").format(new Date(birthDate))}</td>
+      <td>{birthDateFormatted}</td>
       <td>{age} anos</td>
       <td>{hobby}</td>
       <td>{level}</td>
