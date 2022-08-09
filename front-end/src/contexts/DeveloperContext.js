@@ -87,35 +87,51 @@ export function AuthContextProvider({ children }) {
       hobby,
       level,
     };
-    console.log(developer);
-    if (id) {
-      api.put(`developers/${id}`, developer);
-      const updateDevelopers = {
-        developers: data.developers?.map((developer) => {
-          if (developer._id === id) {
-            return { ...developer, name, gender, birthDate, age, hobby, level };
-          }
-          return developer;
-        }),
-      };
-      mutate(updateDevelopers, false);
-    } else {
-      api.post("developers", developer);
-      const updateDevelopers = {
-        developers: [...data.developers, developer],
-      };
+    try {
+      if (id) {
+        api.put(`developers/${id}`, developer);
+        const updateDevelopers = {
+          developers: data.developers?.map((developer) => {
+            if (developer._id === id) {
+              return {
+                ...developer,
+                name,
+                gender,
+                birthDate,
+                age,
+                hobby,
+                level,
+              };
+            }
+            return developer;
+          }),
+        };
+        mutate(updateDevelopers, false);
+      } else {
+        api.post("developers", developer);
+        const updateDevelopers = {
+          developers: [...data.developers, developer],
+        };
 
-      mutate(updateDevelopers, false);
+        mutate(updateDevelopers, false);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setOpenFormModal(false);
     }
-    setOpenFormModal(false);
   }
 
   function handleDelete(id) {
-    api.delete(`developers/${id}`);
-    const updateDeveloper = {
-      developers: data.developers?.filter((item) => item._id !== id),
-    };
-    mutate(updateDeveloper, false);
+    try {
+      api.delete(`developers/${id}`);
+      const updateDeveloper = {
+        developers: data.developers?.filter((item) => item._id !== id),
+      };
+      mutate(updateDeveloper, false);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
