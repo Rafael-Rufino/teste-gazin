@@ -18,7 +18,6 @@ export default function FormModal() {
   const {
     name,
     gender,
-    birthDate,
     age,
     hobby,
     level,
@@ -27,10 +26,12 @@ export default function FormModal() {
     handleName,
     handleLevel,
     handleGender,
-    handleBrthDate,
+    handleBirthDate,
     handleAge,
     handleHobby,
+    birthDate,
   } = useContext(AuthContext);
+
   return (
     <Overlay>
       <Container>
@@ -72,13 +73,13 @@ export default function FormModal() {
               type="date"
               placeholder="Digite sua Data Nascimento"
               value={birthDate}
-              onChange={handleBrthDate}
+              onChange={handleBirthDate}
             />
 
             <Input
               label="Idade"
               id="age"
-              type="text"
+              type="number"
               placeholder="Digite sua Idade"
               value={age}
               onChange={handleAge}

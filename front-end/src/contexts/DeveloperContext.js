@@ -13,7 +13,7 @@ export function AuthContextProvider({ children }) {
   const [id, setId] = useState(false);
   const [level, setLevel] = useState("");
   const [name, setName] = useState("");
-  const [birthDate, setBrthDate] = useState();
+  const [birthDate, setBirthDate] = useState("");
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [hobby, setHobby] = useState("");
@@ -21,7 +21,7 @@ export function AuthContextProvider({ children }) {
   function handleEdit(id, name, gender, birthDate, age, hobby, level) {
     setLevel(level);
     setName(name);
-    setBrthDate(birthDate);
+    setBirthDate(birthDate);
     setGender(gender);
     setAge(age);
     setHobby(hobby);
@@ -42,7 +42,7 @@ export function AuthContextProvider({ children }) {
       setName("");
     }
     if (birthDate) {
-      setGender("");
+      setBirthDate("");
     }
     if (age) {
       setAge(0);
@@ -63,9 +63,10 @@ export function AuthContextProvider({ children }) {
   function handleName(e) {
     setName(e.target.value);
   }
-  function handleBirthDate(e) {
-    setBrthDate(e.target.value);
+  function handleBirthDate(date) {
+    setBirthDate(date.target.value);
   }
+
   function handleGender(e) {
     setGender(e.target.value);
   }
@@ -78,7 +79,34 @@ export function AuthContextProvider({ children }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    const developer = {
+      name,
+      gender,
+      birthDate,
+      age,
+      hobby,
+      level,
+    };
+    console.log(developer);
+    if (id) {
+      api.put(`developers/${id}`, developer);
+      const updateDevelopers = {
+        developers: data.developers?.map((developer) => {
+          if (developer._id === id) {
+            return { ...developer, name, gender, birthDate, age, hobby, level };
+          }
+          return developer;
+        }),
+      };
+      mutate(updateDevelopers, false);
+    } else {
+      api.post("developers", developer);
+      const updateDevelopers = {
+        developers: [...data.developers, developer],
+      };
 
+      mutate(updateDevelopers, false);
+    }
     setOpenFormModal(false);
   }
 
