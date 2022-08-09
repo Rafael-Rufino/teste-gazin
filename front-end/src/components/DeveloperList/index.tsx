@@ -3,11 +3,11 @@ import { Container, Content } from "./styles";
 import { Developer } from "../Developer";
 
 import { useAxios } from "../../hooks/useAxios";
+
 import { IDeveloper } from "./interface";
 
 export function DeveloperList() {
   const { data } = useAxios("developers");
-  console.log(data);
   return (
     <Container>
       <Content>
