@@ -82,7 +82,13 @@ export function AuthContextProvider({ children }) {
     setOpenFormModal(false);
   }
 
-  function handleDelete(id) {}
+  function handleDelete(id) {
+    api.delete(`developers/${id}`);
+    const updateDeveloper = {
+      developers: data.developers?.filter((item) => item._id !== id),
+    };
+    mutate(updateDeveloper, false);
+  }
 
   return (
     <AuthContext.Provider
