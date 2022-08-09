@@ -41,6 +41,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [ ] Axios
 - [ ] Google Fonts Roboto
 - [ ] Configuração de theme
+- [ ] data-fns
 
 
 
